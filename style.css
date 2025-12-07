@@ -1,53 +1,89 @@
-/* style.css */
-
-/* 1. Mint Green Background for the whole page */
-body {
-    background-color: #E0F2F1; /* Mint Green */
-    font-family: Arial, sans-serif; /* Basic readable font */
+/* --- RESET & GLOBAL STYLES --- */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #333; /* Dark grey text is easier to read on green than black */
 }
 
-/* 2. Pale Green for Header and Footer with Drop Shadow */
+body {
+    /* MINT GREEN BACKGROUND */
+    background-color: #C8E6C9 !important; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2D3436;
+    line-height: 1.6;
+    /* This ensures the background covers the full height of the page */
+    min-height: 100vh;
+}
+
+/* --- THE MIDDLE CONTENT AREA --- */
+/* This forces any container in the middle to be transparent 
+   so the Mint Green body color shows through */
+main, .content, section, div:not(header):not(footer) {
+    background-color: transparent !important;
+}
+
+/* --- HEADER & FOOTER --- */
 header, footer {
-    background-color: #C8E6C9; /* Pale Green */
-    padding: 20px;
+    /* PALE GREEN */
+    background-color: #A5D6A7; 
+    padding: 40px 20px;
     text-align: center;
     
-    /* Drop Shadow: x-offset, y-offset, blur, color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* DROP SHADOW */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     
-    /* Ensures the header shadow appears on top of other elements */
+    /* Layering to ensure shadow shows over content */
     position: relative;
     z-index: 10;
 }
 
-/* Footer specific: pushing it down and adjusting shadow direction */
 footer {
-    margin-top: 50px;
-    /* Negative y-offset (-4px) makes the shadow appear above the footer */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    /* Inverts shadow to point upwards for the footer */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
 }
 
-/* 3. Buttons with matching Green and Shadow */
-button, .btn {
-    background-color: #A5D6A7; /* Matches Header/Footer */
-    color: #004D40; /* Dark Teal text for contrast */
+/* --- BUTTONS --- */
+button, .btn, input[type="submit"] {
+    background-color: #81C784; /* Slightly darker green for contrast */
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 28px;
     font-size: 16px;
-    border-radius: 8px; /* Rounded corners */
+    font-weight: bold;
+    border-radius: 50px; /* Modern rounded look */
     cursor: pointer;
+    transition: all 0.3s ease;
     
-    /* Drop Shadow */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* DROP SHADOW */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
     
-    /* Smooth color change when hovering */
-    transition: background-color 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 0;
 }
 
-/* Optional: Make button darker when hovering */
 button:hover, .btn:hover {
-    background-color: #81C784; 
+    background-color: #66BB6A;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Lifts button slightly on hover */
+}
+
+/* --- NAVIGATION LINKS --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1B5E20;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
