@@ -1,4 +1,4 @@
-/* --- RESET & GLOBAL STYLES --- */
+/* --- 1. GLOBAL RESET & BASE STYLES --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,84 +6,107 @@
 }
 
 body {
-    /* MINT GREEN BACKGROUND */
+    /* MINT GREEN BACKGROUND - Visible contrast */
     background-color: #C8E6C9 !important; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #2D3436;
     line-height: 1.6;
-    /* This ensures the background covers the full height of the page */
     min-height: 100vh;
 }
 
-/* --- THE MIDDLE CONTENT AREA --- */
-/* This forces any container in the middle to be transparent 
-   so the Mint Green body color shows through */
-main, .content, section, div:not(header):not(footer) {
+/* Force middle content area to be transparent so the mint body color shows */
+main, section, .content {
     background-color: transparent !important;
-}
-
-/* --- HEADER & FOOTER --- */
-header, footer {
-    /* PALE GREEN */
-    background-color: #A5D6A7; 
     padding: 40px 20px;
     text-align: center;
+}
+
+/* --- 2. HEADER & FOOTER --- */
+header, footer {
+    /* PALE GREEN BACKGROUND */
+    background-color: #A5D6A7; 
+    padding: 30px 20px;
+    text-align: center;
     
-    /* DROP SHADOW */
+    /* DROP SHADOWS */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     
-    /* Layering to ensure shadow shows over content */
+    /* Ensures layering for shadows */
     position: relative;
     z-index: 10;
 }
 
 footer {
-    /* Inverts shadow to point upwards for the footer */
+    /* Inverts shadow to point upwards */
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
-/* --- BUTTONS --- */
-button, .btn, input[type="submit"] {
-    background-color: #81C784; /* Slightly darker green for contrast */
-    color: #ffffff;
-    border: none;
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 50px; /* Modern rounded look */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-    /* DROP SHADOW */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    
-    display: inline-block;
-    text-decoration: none;
-    margin: 10px 0;
+/* --- 3. PRETTIER NAVIGATION BUTTONS --- */
+nav {
+    margin-top: 20px;
 }
 
-button:hover, .btn:hover {
-    background-color: #66BB6A;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px); /* Lifts button slightly on hover */
-}
-
-/* --- NAVIGATION LINKS --- */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 10px;
+    gap: 15px;
 }
 
 nav a {
     text-decoration: none;
-    color: #1B5E20;
-    font-weight: bold;
+    color: #1B5E20; /* Dark green text */
+    background-color: #E8F5E9; /* Light mint center */
+    
+    /* BUTTON BORDER */
+    border: 2px solid #81C784; 
+    
+    padding: 10px 22px;
+    border-radius: 25px; /* Modern pill shape */
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    
+    /* SUBTLE SHADOW on buttons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Navigation Hover Effects */
 nav a:hover {
-    text-decoration: underline;
+    background-color: #81C784;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- 4. SERVICES LIST STYLING --- */
+/* Makes the middle services text look organized */
+ul.services-list {
+    list-style: none;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+ul.services-list li {
+    background: rgba(255, 255, 255, 0.4); /* Translucent soft white */
+    margin: 12px 0;
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 6px solid #A5D6A7; /* Accent border on the side */
+    text-align: left;
+    font-weight: 500;
+}
+
+/* --- 5. GENERAL BUTTONS (e.g., Book Now) --- */
+.action-button {
+    background-color: #A5D6A7;
+    border: 2px solid #1B5E20;
+    color: #1B5E20;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
