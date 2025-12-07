@@ -1,89 +1,104 @@
-/* Cooper & Friends - Brand Shadowed Stylesheet */
+/* Cooper & Friends - Depth-Focused Brand Stylesheet */
 
 :root {
-    --brand-mint: #91C0B1;         /* Primary Mint from Flyer */
-    --brand-dark-teal: #1E5C50;    /* Dark Teal from Logo */
-    --brand-bg-light: #f2f8f6;     /* Clean Wash Background */
+    --brand-mint: #91C0B1;         /* flyer header color */
+    --brand-dark-teal: #1E5C50;    /* flyer logo/footer color */
+    --brand-bg-light: #f2f8f6;     /* light wash background */
     --white: #ffffff;
     
-    /* Extra Strong Shadows */
-    --box-shadow-heavy: 0 10px 25px rgba(0,0,0,0.3);
-    --text-shadow-crisp: 2px 2px 5px rgba(0,0,0,0.5);
+    /* Depth Shadows */
+    --drop-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    --inner-glow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-/* 1. Reset Global Background to Light Wash */
-html, body {
+/* 1. Reset Global Backgrounds to force away the black */
+html, body, #main, .page-wrapper {
     background-color: var(--brand-bg-light) !important;
     margin: 0;
+    padding: 0;
     color: var(--brand-dark-teal) !important;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* 2. Header: Shadowed Teal Bar with Mint Border */
-header, #nav-header {
+/* 2. Header: Shadowed Dark Teal bar with a Mint Bottom Border */
+header, .site-header, #header {
     background: var(--brand-dark-teal) !important;
-    padding: 1.5rem 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
-    border-bottom: 4px solid var(--brand-mint) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 5px solid var(--brand-mint) !important;
+    padding: 1rem 0;
 }
 
-header a, header .logo {
+header nav a, .logo {
     color: var(--white) !important;
-    text-shadow: var(--text-shadow-crisp) !important;
-    text-decoration: none;
+    text-shadow: var(--text-shadow) !important;
     font-weight: bold;
+    text-decoration: none;
 }
 
-/* 3. Hero Area: Force the Brand Mint Green */
-.hero, #home-hero {
+/* 3. Hero Section: Mint with Depth Shadow */
+.hero, #hero-section {
     background-color: var(--brand-mint) !important;
+    color: var(--white) !important;
     padding: 120px 20px;
     text-align: center;
-    color: var(--white) !important;
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.1) !important;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1), var(--drop-shadow) !important;
+    margin-bottom: 40px;
 }
 
 .hero h1, .hero p {
-    text-shadow: var(--text-shadow-crisp) !important;
+    text-shadow: var(--text-shadow) !important;
 }
 
-/* 4. Service Cards: Mint with White Border and Heavy Shadow */
-#services .card, .service-card {
-    background-color: var(--brand-mint) !important;
+/* 4. Buttons: White base with strong shadows and dark borders */
+.fb-btn, .button-main {
+    background: var(--white) !important;
+    color: var(--brand-dark-teal) !important;
+    border: 3px solid var(--brand-dark-teal) !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2) !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.fb-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+}
+
+/* 5. Service Cards: Mint boxes with White Outlines and heavy depth */
+.card, .service-item {
+    background: var(--brand-mint) !important;
     color: var(--white) !important;
-    border-radius: 20px !important;
+    border: 3px solid var(--white) !important; /* Replicates price list borders */
+    border-radius: 15px !important;
     padding: 40px !important;
-    border: 3px solid var(--white) !important; /* Replicates price list style */
-    box-shadow: var(--box-shadow-heavy) !important;
+    box-shadow: var(--drop-shadow) !important;
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
 }
 
 .card h3, .card p {
-    text-shadow: var(--text-shadow-crisp) !important;
+    text-shadow: var(--text-shadow) !important;
 }
 
-/* 5. Buttons: Clear Border and Strong Shadow */
-.fb-btn, .action-button {
-    background-color: var(--white) !important;
-    color: var(--brand-dark-teal) !important;
-    padding: 14px 30px !important;
-    border-radius: 50px !important;
-    font-weight: bold !important;
-    display: inline-block !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3) !important;
-    border: 3px solid var(--brand-dark-teal) !important;
-}
-
-/* 6. Footer: Shadowed Teal Bar with Mint Top Border */
-footer, #site-footer {
+/* 6. Footer: Dark Teal bar with a Mint Top Border */
+footer, .site-footer {
     background: var(--brand-dark-teal) !important;
     color: var(--white) !important;
-    padding: 60px 20px !important;
+    padding: 60px 20px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3) !important;
+    border-top: 5px solid var(--brand-mint) !important;
     text-align: center;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.3) !important;
-    border-top: 4px solid var(--brand-mint) !important;
 }
 
 footer p, footer a {
-    text-shadow: var(--text-shadow-crisp) !important;
+    text-shadow: var(--text-shadow) !important;
 }
