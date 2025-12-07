@@ -1,28 +1,31 @@
 /* --- 1. GLOBAL RESET --- */
 * {
+    /* Prevents padding from pushing content off the screen edge */
     box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
 
 body {
-    /* Direct match to your flyers' background */
+    /* Mint Green theme consistent across all subfolders */
     background-color: #C8E6C9 !important; 
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #2D3436;
     line-height: 1.6;
 }
 
-/* --- 2. HEADER & LOGO --- */
+/* --- 2. HEADER & BRANDING --- */
 header {
     background-color: #A5D6A7; /* Pale Green Header */
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Drop Shadow for depth */
+    position: relative;
+    z-index: 10;
 }
 
 .main-logo {
-    max-width: 220px; /* Branding authority */
+    max-width: 220px; /* Branded authority from logo.png */
     height: auto;
     margin-bottom: 10px;
 }
@@ -30,11 +33,11 @@ header {
 .logo-text {
     font-size: 2rem;
     font-weight: bold;
-    color: #1B5E20; /* Dark Green from logo */
+    color: #1B5E20; /* Dark Green from your brand logo */
     margin-bottom: 15px;
 }
 
-/* --- 3. NAVIGATION (RESTORING BUTTON BUBBLES) --- */
+/* --- 3. NAVIGATION (PILL BUTTONS) --- */
 nav ul {
     list-style: none;
     display: flex;
@@ -46,12 +49,13 @@ nav a {
     text-decoration: none;
     color: #1B5E20;
     background-color: #E8F5E9;
+    /* Clean borders and pill-shape */
     border: 2px solid #81C784; 
     padding: 8px 20px;
-    border-radius: 25px; /* Restores the pill-bubble look */
+    border-radius: 25px;
     font-weight: 600;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Button Drop Shadow */
+    transition: 0.3s ease;
 }
 
 nav a:hover {
@@ -59,30 +63,79 @@ nav a:hover {
     color: white;
 }
 
-/* --- 4. SHARED PAGE LAYOUT --- */
-.services-container, .reviews-container {
+/* --- 4. HOME PAGE LEAFLET GRID BOXES --- */
+.leaflet-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.leaflet-grid {
     display: flex;
     gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin-bottom: 40px;
 }
 
-.services-main, .reviews-main {
-    flex: 3;
+.leaflet-column {
+    flex: 1;
+    background-color: white; /* RESTORES THE WHITE BOX */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* RESTORES DROP SHADOW */
+    height: auto !important; 
 }
 
-/* --- 5. REVIEWS PAGE SPECIFIC (SPEECH BUBBLES) --- */
+.leaflet-dark {
+    background-color: #E8F5E9; /* Highlight accent from leaflet */
+    border-left: 10px solid #A5D6A7;
+}
+
+.leaflet-pill {
+    background-color: #1B5E20; /* standardized brand green */
+    color: white;
+    display: inline-block;
+    padding: 5px 25px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* --- 5. SHARED COMPONENTS (POLICY & PRICING) --- */
+.pricing-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: auto !important; /* Forces expansion for full policy text */
+}
+
+.pricing-box h3 {
+    background-color: #A5D6A7;
+    padding: 15px;
+    text-align: center;
+    color: #1B5E20;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #E0F2F1;
+}
+
+/* --- 6. REVIEW SPEECH BUBBLES --- */
 .review-bubble {
     background: white;
     padding: 25px;
-    border-radius: 20px; /* The round "bubble" look */
+    border-radius: 20px; /* Speech bubble look */
     position: relative;
     margin-bottom: 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Tail for speech bubble */
 .review-bubble::after {
     content: '';
     position: absolute;
@@ -93,53 +146,32 @@ nav a:hover {
     border-color: transparent white transparent transparent;
 }
 
-.bubble-alt::after {
-    left: auto;
-    right: -15px;
-    border-width: 15px 0 15px 15px;
-    border-color: transparent transparent transparent white;
-}
-
-.stars {
-    color: #FFD700; /* Gold brand color for 5-star rating */
-    margin-bottom: 10px;
-}
-
-/* --- 6. SERVICES & POLICY BOXES --- */
-.pricing-box {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.pricing-box h3 {
-    background-color: #A5D6A7; /* Matches pale green header */
-    padding: 15px;
-    text-align: center;
+/* --- 7. SIDEBAR STYLES --- */
+.services-sidebar {
+    background-color: #A5D6A7; 
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     color: #1B5E20;
 }
 
-/* --- 7. SIDEBAR & FOOTER --- */
-.services-sidebar {
-    flex: 1;
-    background-color: #A5D6A7;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-
+/* --- 8. FOOTER --- */
 footer {
     background-color: #A5D6A7; 
     padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 50px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15); /* Drop Shadow */
 }
 
-/* --- 8. MOBILE FIX --- */
-@media (max-width: 768px) {
-    .services-container, .reviews-container {
+/* --- 9. RESPONSIVE / MOBILE FIXES --- */
+@media (max-width: 850px) {
+    .leaflet-grid, .services-container, .reviews-container, nav ul {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .leaflet-column, .pricing-box {
+        width: 100%;
     }
 }
