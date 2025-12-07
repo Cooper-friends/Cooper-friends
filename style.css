@@ -1,18 +1,17 @@
-/* Cooper & Friends - Brand Accurate Shadowed Stylesheet */
+/* Cooper & Friends - Final Shadowed Brand Styles */
 
 :root {
-    --brand-mint: #91C0B1;         /* Primary green from flyer */
-    --brand-dark-teal: #1E5C50;    /* Dark teal logo text */
-    --brand-bg-light: #f2f8f6;     /* Clean wash */
+    --brand-mint: #91C0B1;         /* Mint from price list background */
+    --brand-dark-teal: #1E5C50;    /* Dark teal from logo text */
+    --brand-bg-light: #f2f8f6;     /* Page background wash */
     --white: #ffffff;
     
-    /* Global Shadow for Sections */
-    --box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    /* Text Shadow for Legibility */
-    --text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    /* Strong shadows to force depth */
+    --box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    --text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
-/* 1. Global Background */
+/* 1. Global Page Background */
 body {
     background-color: var(--brand-bg-light);
     margin: 0;
@@ -20,80 +19,78 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* 2. Header with Border & Shadow */
+/* 2. Header: Floating with Shadow & Mint Border */
 header {
     background-color: var(--brand-dark-teal) !important;
     padding: 1.5rem 0;
-    color: var(--white);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* Border shadow */
-    border-bottom: 2px solid var(--brand-mint); /* Mint separation border */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Border shadow */
+    border-bottom: 3px solid var(--brand-mint); /* Separating mint border */
 }
 
 header .logo, header nav a {
-    text-shadow: var(--text-shadow); /* Text shadow for nav links */
     color: var(--white) !important;
+    text-shadow: var(--text-shadow); /* Text shadow on nav */
+    font-weight: bold;
     text-decoration: none;
 }
 
-/* 3. Hero Section (The Big Green Box) */
+/* 3. Hero Section: Mint with Internal Depth */
 .hero {
     background-color: var(--brand-mint) !important;
     padding: 120px 20px;
     text-align: center;
     color: var(--white);
-    box-shadow: inset 0 -5px 15px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
 }
 
 .hero h1, .hero p {
-    text-shadow: var(--text-shadow); /* Text shadow on hero text */
+    text-shadow: var(--text-shadow); /* Text shadow on main title */
 }
 
-/* 4. Service Cards with Shadow & Border */
+/* 4. Service Cards: Mint with White Border & Shadow */
 .card {
     background-color: var(--brand-mint) !important;
     color: var(--white);
     border-radius: 20px;
     padding: 40px;
     width: 280px;
-    border: 2px solid var(--white); /* White border like the price list boxes */
-    box-shadow: var(--box-shadow); /* Drop shadow around card */
+    border: 2px solid var(--white); /* White outline border */
+    box-shadow: var(--box-shadow); /* Floating shadow */
     text-align: center;
 }
 
 .card h3, .card p {
-    text-shadow: var(--text-shadow); /* Text shadow on card titles */
+    text-shadow: var(--text-shadow); /* Text shadow for clarity */
 }
 
-/* 5. Buttons with Drop Shadow */
+/* 5. Buttons: Clear Borders & Drop Shadows */
 .fb-btn {
     background-color: var(--white);
     color: var(--brand-dark-teal);
-    padding: 12px 28px;
+    padding: 14px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.2); /* Button drop shadow */
-    border: 1px solid var(--brand-dark-teal);
-    text-shadow: none; /* Keep button text crisp */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25); /* Strong button shadow */
+    border: 2px solid var(--brand-dark-teal); /* Dark border */
+    transition: transform 0.2s;
 }
 
-/* 6. Footer with Border & Shadow */
+.fb-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* 6. Footer: Floating with Mint Top Border */
 footer {
     background-color: var(--brand-dark-teal) !important;
     color: var(--white);
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.2); /* Shadow on top of footer */
-    border-top: 2px solid var(--brand-mint); /* Mint separation border */
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.3); /* Top border shadow */
+    border-top: 3px solid var(--brand-mint); /* Mint line at top */
 }
 
 footer h3, footer p {
-    text-shadow: var(--text-shadow); /* Text shadow on footer info */
-}
-
-/* 7. General Service Header Contrast */
-#services h2 {
-    color: var(--brand-dark-teal);
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    text-shadow: var(--text-shadow); /* Text shadow on footer details */
 }
