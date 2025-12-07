@@ -1,37 +1,133 @@
-/* --- LEAFLET GRID STYLES --- */
-.leaflet-pill {
-    background-color: #1B5E20; /* Matches your brand green */
-    color: white;
-    display: inline-block;
-    padding: 8px 25px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+/* --- 1. GLOBAL RESET --- */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
 }
 
-/* Fixes for missing content: Auto-height for boxes */
-.pricing-box, .leaflet-column {
-    height: auto !important; /* Forces box to grow with text content */
-    min-height: 250px;
+body {
+    /* Mint Green identity across all pages */
+    background-color: #C8E6C9 !important; 
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #2D3436;
+    line-height: 1.6;
+}
+
+/* --- 2. HEADER & BRANDING --- */
+header {
+    background-color: #A5D6A7; 
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.main-logo {
+    max-width: 220px; /* Branded logo authority */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* --- 3. NAVIGATION --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1B5E20;
+    background-color: #E8F5E9;
+    border: 2px solid #81C784; 
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+/* --- 4. HOME PAGE LEAFLET GRID --- */
+/* Target the correct class from your HTML */
+.leaflet-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.leaflet-grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.leaflet-column {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    height: auto !important; /* Allows box to expand downward to fit text */
+}
+
+.leaflet-dark {
+    background-color: #E8F5E9; 
+    border-left: 10px solid #A5D6A7;
+}
+
+.leaflet-pill {
+    background-color: #1B5E20; /* standardized color */
+    color: white;
+    display: inline-block;
+    padding: 5px 25px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Fixes spelling visually if misspelled in HTML */
+}
+
+/* --- 5. SHARED PRICING & POLICY BOXES --- */
+.policy-container {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.pricing-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: auto !important; /* Ensures policy is never cut off */
+}
+
+.pricing-box h3 {
+    background-color: #A5D6A7;
+    padding: 15px;
+    text-align: center;
+    color: #1B5E20;
 }
 
 .policy-content {
     padding: 30px;
-    text-align: left;
-    color: #2D3436;
 }
 
 .priority-note {
     font-weight: bold;
     text-align: center;
-    color: #1B5E20;
-    margin-top: 20px;
+    color: #1B5E20; /* Safety first priority */
+    margin-top: 15px;
 }
 
-/* Ensure consistent text wrapping on mobile */
+/* --- 6. SHARED SIDEBAR STYLES --- */
+.services-sidebar {
+    background-color: #A5D6A7; 
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* --- 7. RESPONSIVE --- */
 @media (max-width: 768px) {
-    .pricing-box {
-        padding-bottom: 20px;
+    .leaflet-grid, nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 }
