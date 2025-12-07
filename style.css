@@ -1,137 +1,43 @@
-/* --- 1. GLOBAL RESET --- */
-* {
-    box-sizing: border-box; 
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: #C8E6C9 !important; /* Mint green theme */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #2D3436;
-    line-height: 1.6;
-}
-
-/* --- 2. HEADER & LOGO --- */
-header {
-    background-color: #A5D6A7; /* Pale green header */
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
-}
-
-.header-content {
+/* --- REVIEWS LAYOUT --- */
+.reviews-main {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 30px;
 }
 
-.main-logo {
-    max-width: 220px; /* Branded authority */
-    height: auto;
+.review-bubble {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Default Left Speech Tail */
+.review-bubble::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 30px;
+    border-width: 15px 15px 15px 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+
+/* Alternate Right Speech Tail for visual interest */
+.bubble-alt::after {
+    left: auto;
+    right: -15px;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent white;
+}
+
+.stars {
+    color: #FFD700; /* Gold brand color seen in reviewer templates */
     margin-bottom: 10px;
 }
 
-/* Restores the text branding if logo is missing or to support logo text */
-.logo-text {
-    font-size: 2rem;
+.customer-name {
     font-weight: bold;
     color: #1B5E20; /* Brand green */
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-/* --- 3. NAVIGATION --- */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #1B5E20;
-    background-color: #E8F5E9;
-    border: 2px solid #81C784; 
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-}
-
-/* --- 4. LEAFLET GRID (HOME PAGE) --- */
-.leaflet-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.leaflet-grid {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.leaflet-column {
-    flex: 1;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    height: auto !important; /* Ensures text fits */
-}
-
-.leaflet-pill {
-    background-color: #1B5E20; 
-    color: white;
-    display: inline-block;
-    padding: 5px 25px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-/* --- 5. PRICING & POLICY --- */
-.pricing-box {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-    height: auto !important; /* Forces expansion for full policy */
-}
-
-.pricing-box h3 {
-    background-color: #A5D6A7;
-    padding: 15px;
-    text-align: center;
-    color: #1B5E20;
-}
-
-/* --- 6. FOOTER (FIXED) --- */
-footer {
-    background-color: #A5D6A7; /* Pale green footer */
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 50px;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15); /* Reverse shadow */
-}
-
-.footer-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.facebook-link {
-    display: inline-block;
-    margin: 15px 0;
-    font-weight: bold;
-    color: #1B5E20;
-}
-
-/* --- 7. RESPONSIVE --- */
-@media (max-width: 768px) {
-    .leaflet-grid, nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
 }
