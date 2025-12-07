@@ -1,30 +1,25 @@
 /* --- 1. GLOBAL RESET & BASE STYLES --- */
 * {
-    /* Padding is included in width calculation to prevent off-edge content */
+    /* Ensures padding stays inside elements to fix mobile edges */
     box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
 
 body {
-    /* Mint Green Background */
-    background-color: #C8E6C9 !important; 
+    background-color: #C8E6C9 !important; /* Mint Green theme */
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #2D3436;
     line-height: 1.6;
     min-height: 100vh;
-    /* Prevents horizontal overflow on small screens */
-    overflow-x: hidden; 
 }
 
-/* --- 2. HEADER & LOGO --- */
+/* --- 2. HEADER & BRANDING --- */
 header {
-    /* Pale Green Header */
-    background-color: #A5D6A7; 
+    background-color: #A5D6A7; /* Pale Green Header */
     padding: 30px 20px;
     text-align: center;
-    /* Drop Shadow for depth */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Professional shadow */
     position: relative;
     z-index: 10;
 }
@@ -36,12 +31,12 @@ header {
 }
 
 .main-logo {
-    max-width: 220px; /* Sizing based on logo.png proportions */
+    max-width: 220px; /* Branded logo size */
     height: auto;
     margin-bottom: 15px;
 }
 
-/* --- 3. NAVIGATION --- */
+/* --- 3. NAVIGATION BUTTONS --- */
 nav ul {
     list-style: none;
     display: flex;
@@ -53,103 +48,86 @@ nav a {
     text-decoration: none;
     color: #1B5E20;
     background-color: #E8F5E9;
-    /* Defined pill-shape border */
-    border: 2px solid #81C784; 
+    border: 2px solid #81C784; /* Defined button borders */
     padding: 8px 20px;
-    border-radius: 25px;
+    border-radius: 25px; /* Pill-shaped buttons */
     font-weight: 600;
-    transition: 0.3s ease;
-    /* Button Drop Shadow */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a:hover {
     background-color: #81C784;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* --- 4. HERO SECTION (HOME PAGE) --- */
-.hero {
+/* --- 4. HOMEPAGE LEAFLET GRID --- */
+.leaflet-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.hero-leaflet {
     text-align: center;
-    padding: 60px 20px;
-    max-width: 850px;
-    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
-.hero h1 {
+.hero-leaflet h1 {
     font-size: 2.8rem;
-    color: #1B5E20;
+    color: #1B5E20; /* Brand green text */
+}
+
+.leaflet-grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.leaflet-column {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.leaflet-dark {
+    background-color: #E8F5E9; /* Light contrast box */
+    border-left: 10px solid #A5D6A7;
+}
+
+.leaflet-pill {
+    background-color: #1B5E20;
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 50px;
     margin-bottom: 20px;
 }
 
-.btn-hero {
-    background-color: #A5D6A7;
-    color: #1B5E20;
-    border: 2px solid #1B5E20;
-    padding: 14px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.btn-hero:hover {
-    background-color: #1B5E20;
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* --- 5. SHARED LAYOUT (SERVICES, REVIEWS, ABOUT) --- */
+/* --- 5. SERVICES & SHARED PRICING BOXES --- */
 .services-container, .reviews-container {
     display: flex;
-    flex-direction: row;
     gap: 30px;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
-    align-items: flex-start;
 }
 
-.services-main, .reviews-main {
-    flex: 3;
-}
-
-/* --- 6. PRICING & POLICY BOXES --- */
-.policy-container {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
+.services-main, .reviews-main { flex: 3; }
 
 .pricing-box {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden; 
+    overflow: hidden;
     margin-bottom: 20px;
 }
 
 .pricing-box h3 {
     background-color: #A5D6A7;
     padding: 15px;
-    text-align: center;
-    color: #1B5E20;
-}
-
-.policy-content {
-    padding: 30px;
-    text-align: left;
-}
-
-.policy-content p {
-    margin-bottom: 20px;
-}
-
-.priority-note {
-    font-weight: bold;
     text-align: center;
     color: #1B5E20;
 }
@@ -164,37 +142,7 @@ nav a:hover {
     border-bottom: 1px solid #E0F2F1;
 }
 
-/* --- 7. SIDEBAR --- */
-.services-sidebar {
-    flex: 1;
-    background-color: #A5D6A7;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    color: #1B5E20;
-}
-
-.contact-card h3 {
-    font-size: 1.5rem;
-    color: #1B5E20;
-    margin-bottom: 20px;
-    text-decoration: underline;
-    text-align: center;
-}
-
-.contact-info p {
-    margin: 10px 0;
-    font-weight: bold;
-    text-align: center;
-}
-
-.contact-info hr {
-    border: 0;
-    border-top: 1px solid rgba(255,255,255,0.3);
-    margin: 20px 0;
-}
-
-/* --- 8. REVIEW SPEECH BUBBLES --- */
+/* --- 6. REVIEW SPEECH BUBBLES --- */
 .review-bubble {
     background: white;
     padding: 25px;
@@ -214,58 +162,35 @@ nav a:hover {
     border-color: transparent white transparent transparent;
 }
 
-.stars {
-    color: #FFD700;
-    margin-bottom: 10px;
+.stars { color: #FFD700; margin-bottom: 10px; }
+
+/* --- 7. SHARED SIDEBAR STYLES --- */
+.services-sidebar {
+    flex: 1;
+    background-color: #A5D6A7;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    color: #1B5E20;
 }
 
-/* --- 9. FOOTER --- */
+/* --- 8. FOOTER --- */
 footer {
-    /* Pale Green Footer */
-    background-color: #A5D6A7; 
+    background-color: #A5D6A7;
     padding: 40px 20px;
     text-align: center;
     margin-top: 50px;
-    /* Drop shadow points upward */
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.footer-content a.facebook-link {
-    color: #1B5E20;
-    font-weight: bold;
-}
-
-/* --- 10. RESPONSIVE / MOBILE FIXES --- */
+/* --- 9. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .services-container, 
-    .reviews-container {
-        flex-direction: column;
-        padding: 0 15px;
-        width: 100%;
-    }
-
-    .services-main, 
-    .reviews-main, 
-    .services-sidebar {
-        width: 100%;
-        flex: none;
-    }
-
-    .services-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
+    .services-container, .reviews-container, .leaflet-grid, nav ul {
         flex-direction: column;
         align-items: center;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+    .services-main, .services-sidebar { width: 100%; }
 
-    .review-bubble::after {
-        display: none; /* Tail removed for cleaner fit on mobile */
-    }
+    .review-bubble::after { display: none; }
 }
