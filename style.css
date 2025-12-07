@@ -1,4 +1,4 @@
-/* --- 1. GLOBAL RESET & BASE STYLES --- */
+/* --- GLOBAL RESET & BASE STYLES --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,47 +6,32 @@
 }
 
 body {
-    /* MINT GREEN BACKGROUND - Visible contrast */
+    /* MINT GREEN BACKGROUND */
     background-color: #C8E6C9 !important; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: #2D3436;
     line-height: 1.6;
     min-height: 100vh;
 }
 
-/* Force middle content area to be transparent so the mint body color shows */
-main, section, .content {
-    background-color: transparent !important;
-    padding: 40px 20px;
+/* --- HEADER --- */
+header {
+    background-color: #A5D6A7; /* PALE GREEN */
+    padding: 20px 40px;
     text-align: center;
-}
-
-/* --- 2. HEADER & FOOTER --- */
-header, footer {
-    /* PALE GREEN BACKGROUND */
-    background-color: #A5D6A7; 
-    padding: 30px 20px;
-    text-align: center;
-    
-    /* DROP SHADOWS */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    
-    /* Ensures layering for shadows */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* DROP SHADOW */
     position: relative;
     z-index: 10;
 }
 
-footer {
-    /* Inverts shadow to point upwards */
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-    margin-top: 50px;
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1B5E20;
+    margin-bottom: 15px;
 }
 
-/* --- 3. PRETTIER NAVIGATION BUTTONS --- */
-nav {
-    margin-top: 20px;
-}
-
+/* --- NAVIGATION BUTTONS --- */
 nav ul {
     list-style: none;
     display: flex;
@@ -56,57 +41,100 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #1B5E20; /* Dark green text */
-    background-color: #E8F5E9; /* Light mint center */
-    
-    /* BUTTON BORDER */
-    border: 2px solid #81C784; 
-    
-    padding: 10px 22px;
-    border-radius: 25px; /* Modern pill shape */
+    color: #1B5E20;
+    background-color: #E8F5E9;
+    border: 2px solid #81C784; /* DEFINED BORDER */
+    padding: 8px 20px;
+    border-radius: 25px;
     font-weight: 600;
-    font-size: 15px;
     transition: all 0.3s ease;
-    
-    /* SUBTLE SHADOW on buttons */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* BUTTON DROP SHADOW */
 }
 
-/* Navigation Hover Effects */
 nav a:hover {
     background-color: #81C784;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px); /* Slight lift effect */
+    transform: translateY(-2px);
 }
 
-/* --- 4. SERVICES LIST STYLING --- */
-/* Makes the middle services text look organized */
-ul.services-list {
-    list-style: none;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 0;
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: transparent !important;
 }
 
-ul.services-list li {
-    background: rgba(255, 255, 255, 0.4); /* Translucent soft white */
-    margin: 12px 0;
-    padding: 15px;
-    border-radius: 12px;
-    border-left: 6px solid #A5D6A7; /* Accent border on the side */
-    text-align: left;
-    font-weight: 500;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-/* --- 5. GENERAL BUTTONS (e.g., Book Now) --- */
-.action-button {
+.fb-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
     background-color: #A5D6A7;
-    border: 2px solid #1B5E20;
     color: #1B5E20;
-    padding: 12px 30px;
+    border: 2px solid #1B5E20;
+    padding: 12px 25px;
     border-radius: 8px;
     font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.fb-btn:hover {
+    background-color: #1B5E20;
+    color: white;
+}
+
+/* --- SERVICES GRID --- */
+#services {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #E8F5E9;
+    border: 2px solid #A5D6A7;
+    padding: 30px;
+    border-radius: 15px;
+    width: 200px;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* CARD DROP SHADOW */
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #A5D6A7; /* PALE GREEN */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15); /* REVERSE DROP SHADOW */
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+.facebook-link {
+    display: inline-block;
+    margin: 15px 0;
+    color: #1B5E20;
+    font-weight: bold;
+    text-decoration: underline;
 }
