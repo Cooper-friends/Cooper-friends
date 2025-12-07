@@ -2,7 +2,7 @@
 
 /* 1. Root Variables for Softer, Minty Colors */
 :root {
-    --bg-mint: #f0fff4;       /* Very Light Mint Background (Almost white) */
+    --bg-mint: #99c4ba;       /* Very Light Mint Background (Almost white) */
     --text-dark-green: #38761d; /* Muted Forest Green for main headings/footer */
     --accent-green: #6aa84f;    /* Softer, Mid-Tone Green for Facebook button */
     --white: #ffffff;
