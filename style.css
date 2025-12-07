@@ -1,27 +1,50 @@
-/* Basic Reset */
+/* Cooper & Friends Custom Stylesheet */
+
+/* 1. Root Variables for Easy Color Changes */
+:root {
+    --bg-mint: #e8f5e9;       /* The pale green background */
+    --text-dark-green: #1b5e20; /* Deep forest green for main headings */
+    --accent-green: #2e7d32;    /* Medium forest green for buttons */
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 2. Global Styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding: 0;
     line-height: 1.6;
-    color: #333;
+    background-color: var(--bg-mint);
+    color: var(--text-dark-green);
 }
 
-/* Header & Nav */
+/* 3. Header & Navigation */
 header {
-    background: #4A90E2;
-    color: white;
+    background: var(--text-dark-green);
     padding: 1rem 0;
+    box-shadow: var(--shadow);
 }
 
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -29,61 +52,129 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: opacity 0.3s;
 }
 
-/* Hero Section */
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+/* 4. Hero Section */
 .hero {
-    background: #f4f4f4;
     text-align: center;
     padding: 100px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* The Facebook Button Style */
-.fb-btn {
-    background: #1877F2; /* Facebook Blue */
-    color: white;
-    padding: 12px 24px;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* 5. Buttons */
+.fb-btn, .call-btn {
+    padding: 14px 28px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     display: inline-block;
-    margin-top: 20px;
+    margin: 10px;
     font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: var(--shadow);
 }
 
-.fb-btn:hover {
-    background: #155bb5;
+.fb-btn {
+    background: var(--accent-green);
+    color: var(--white);
 }
 
-/* Services */
+.call-btn {
+    background: var(--text-dark-green);
+    color: var(--white);
+}
+
+.fb-btn:hover, .call-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* 6. Services Section */
+#services {
+    padding: 60px 20px;
+    text-align: center;
+}
+
 .service-grid {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 50px;
+    margin-top: 30px;
 }
 
 .card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    width: 200px;
+    background: var(--white);
+    border: 2px solid var(--text-dark-green);
+    padding: 30px;
+    border-radius: 12px;
+    width: 250px;
     text-align: center;
+    box-shadow: var(--shadow);
 }
 
-/* Footer Styles */
+/* 7. Footer */
 footer {
-    background: #333;
-    color: white;
+    background: var(--text-dark-green);
+    color: var(--white);
     text-align: center;
-    padding: 40px;
+    padding: 50px 20px;
+    margin-top: 60px;
+}
+
+footer h3 {
+    color: var(--white);
+    margin-bottom: 10px;
 }
 
 .facebook-link {
-    color: #4A90E2;
+    color: var(--bg-mint);
     text-decoration: underline;
-    font-siz
-      e: 1.2rem;
+    font-size: 1.1rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+/* 8. Responsive Design for Mobile */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .fb-btn, .call-btn {
+        display: block;
+        width: 85%;
+        margin: 10px auto;
+    }
+
+    .service-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
 }
