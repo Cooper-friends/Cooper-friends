@@ -1,12 +1,18 @@
-/* Cooper & Friends Custom Stylesheet - Corrected Mint Colors */
+/* Cooper & Friends - Brand Accurate Custom Stylesheet */
 
-/* 1. Root Variables for Softer, Minty Colors */
+/* 1. Brand Root Variables */
 :root {
-    --bg-mint: #99c4a7;       /* Very Light Mint Background (Almost white) */
-    --text-dark-green: #ffffff; /* Muted Forest Green for main headings/footer */
-    --accent-green: #99c4a8;    /* Softer, Mid-Tone Green for Facebook button */
+    /* Found in price list headers and testimonial bubbles */
+    --brand-mint: #91C0B1;         
+    
+    /* Found in "Cooper & Friends" main logo text */
+    --brand-dark-teal: #1E5C50;   
+    
+    /* Subtle off-white wash for clean backgrounds */
+    --brand-light-wash: #f2f8f6;  
+    
     --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 /* 2. Global Styling */
@@ -15,13 +21,13 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: var(--bg-mint);
-    color: var(--text-dark-green);
+    background-color: var(--brand-light-wash); /* Prevents total darkness */
+    color: var(--brand-dark-teal); /* Ensures readable text */
 }
 
 /* 3. Header & Navigation */
 header {
-    background: var(--text-dark-green);
+    background: var(--white);
     padding: 1rem 0;
     box-shadow: var(--shadow);
 }
@@ -37,7 +43,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--white);
+    color: var(--brand-dark-teal); /* Matches dark logo text */
 }
 
 nav ul {
@@ -52,32 +58,34 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--white);
+    color: var(--brand-dark-teal);
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.3s;
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
-    opacity: 0.8;
+    color: var(--brand-mint);
 }
 
 /* 4. Hero Section */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
+    background-color: var(--brand-mint); /* Mimics mint sidebar color */
+    color: var(--white);
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    opacity: 0.9;
 }
 
 /* 5. Buttons */
@@ -88,19 +96,21 @@ nav ul li a:hover {
     display: inline-block;
     margin: 10px;
     font-weight: bold;
-    transition: transform 0.2s, background-color 0.3s;
+    transition: 0.3s;
     box-shadow: var(--shadow);
+    border: none;
+    cursor: pointer;
 }
 
-/* Facebook Button - Now the softer, mid-tone green */
+/* Facebook Button - Primary Brand Mint */
 .fb-btn {
-    background: var(--accent-green);
+    background: var(--brand-mint);
     color: var(--white);
 }
 
-/* Call Button - Remains the darker, muted forest green for contrast */
+/* Call Button - Dark Teal for contrast */
 .call-btn {
-    background: var(--text-dark-green);
+    background: var(--brand-dark-teal);
     color: var(--white);
 }
 
@@ -111,7 +121,7 @@ nav ul li a:hover {
 
 /* 6. Services Section */
 #services {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
@@ -119,64 +129,53 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .card {
     background: var(--white);
-    border: 2px solid var(--accent-green); /* Border matches softer button green */
-    padding: 30px;
-    border-radius: 12px;
-    width: 250px;
+    border: 1.5px solid var(--brand-mint); /* Border based on bubble accent */
+    padding: 40px;
+    border-radius: 15px;
+    width: 280px;
     text-align: center;
     box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 /* 7. Footer */
 footer {
-    background: var(--text-dark-green); /* Darker green background */
+    background: var(--brand-dark-teal); /* Dark forest footer */
     color: var(--white);
     text-align: center;
-    padding: 50px 20px;
-    margin-top: 60px;
+    padding: 60px 20px;
+    margin-top: 80px;
 }
 
 footer h3 {
-    color: var(--white);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .facebook-link {
-    color: var(--bg-mint); /* Light mint link on dark green background */
+    color: var(--brand-mint);
     text-decoration: underline;
     font-size: 1.1rem;
 }
 
 footer p {
     font-size: 0.9rem;
-    margin-top: 20px;
-    opacity: 0.7;
+    margin-top: 25px;
+    opacity: 0.6;
 }
 
-/* 8. Responsive Design for Mobile */
+/* 8. Mobile Responsiveness */
 @media (max-width: 600px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-    
-    .fb-btn, .call-btn {
-        display: block;
-        width: 85%;
-        margin: 10px auto;
-    }
-
-    .service-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 80%;
-    }
+    .hero h1 { font-size: 2rem; }
+    .fb-btn, .call-btn { width: 90%; margin: 10px auto; display: block; }
+    .card { width: 90%; }
 }
