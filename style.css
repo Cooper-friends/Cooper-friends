@@ -1,196 +1,37 @@
-/* --- 1. GLOBAL RESET & BASE STYLES --- */
-* {
-    /* Ensures padding stays inside elements to fix mobile edges */
-    box-sizing: border-box; 
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: #C8E6C9 !important; /* Mint Green theme */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #2D3436;
-    line-height: 1.6;
-    min-height: 100vh;
-}
-
-/* --- 2. HEADER & BRANDING --- */
-header {
-    background-color: #A5D6A7; /* Pale Green Header */
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Professional shadow */
-    position: relative;
-    z-index: 10;
-}
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main-logo {
-    max-width: 220px; /* Branded logo size */
-    height: auto;
-    margin-bottom: 15px;
-}
-
-/* --- 3. NAVIGATION BUTTONS --- */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #1B5E20;
-    background-color: #E8F5E9;
-    border: 2px solid #81C784; /* Defined button borders */
-    padding: 8px 20px;
-    border-radius: 25px; /* Pill-shaped buttons */
-    font-weight: 600;
-    transition: 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav a:hover {
-    background-color: #81C784;
-    color: white;
-}
-
-/* --- 4. HOMEPAGE LEAFLET GRID --- */
-.leaflet-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.hero-leaflet {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.hero-leaflet h1 {
-    font-size: 2.8rem;
-    color: #1B5E20; /* Brand green text */
-}
-
-.leaflet-grid {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.leaflet-column {
-    flex: 1;
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.leaflet-dark {
-    background-color: #E8F5E9; /* Light contrast box */
-    border-left: 10px solid #A5D6A7;
-}
-
+/* --- LEAFLET GRID STYLES --- */
 .leaflet-pill {
-    background-color: #1B5E20;
+    background-color: #1B5E20; /* Matches your brand green */
     color: white;
     display: inline-block;
-    padding: 5px 20px;
+    padding: 8px 25px;
     border-radius: 50px;
     margin-bottom: 20px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
 }
 
-/* --- 5. SERVICES & SHARED PRICING BOXES --- */
-.services-container, .reviews-container {
-    display: flex;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* Fixes for missing content: Auto-height for boxes */
+.pricing-box, .leaflet-column {
+    height: auto !important; /* Forces box to grow with text content */
+    min-height: 250px;
 }
 
-.services-main, .reviews-main { flex: 3; }
-
-.pricing-box {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.pricing-box h3 {
-    background-color: #A5D6A7;
-    padding: 15px;
-    text-align: center;
-    color: #1B5E20;
-}
-
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.price-table td {
-    padding: 12px 20px;
-    border-bottom: 1px solid #E0F2F1;
-}
-
-/* --- 6. REVIEW SPEECH BUBBLES --- */
-.review-bubble {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    position: relative;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.review-bubble::after {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 30px;
-    border-width: 15px 15px 15px 0;
-    border-style: solid;
-    border-color: transparent white transparent transparent;
-}
-
-.stars { color: #FFD700; margin-bottom: 10px; }
-
-/* --- 7. SHARED SIDEBAR STYLES --- */
-.services-sidebar {
-    flex: 1;
-    background-color: #A5D6A7;
+.policy-content {
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    color: #1B5E20;
+    text-align: left;
+    color: #2D3436;
 }
 
-/* --- 8. FOOTER --- */
-footer {
-    background-color: #A5D6A7;
-    padding: 40px 20px;
+.priority-note {
+    font-weight: bold;
     text-align: center;
-    margin-top: 50px;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    color: #1B5E20;
+    margin-top: 20px;
 }
 
-/* --- 9. MOBILE RESPONSIVENESS --- */
+/* Ensure consistent text wrapping on mobile */
 @media (max-width: 768px) {
-    .services-container, .reviews-container, .leaflet-grid, nav ul {
-        flex-direction: column;
-        align-items: center;
+    .pricing-box {
+        padding-bottom: 20px;
     }
-
-    .services-main, .services-sidebar { width: 100%; }
-
-    .review-bubble::after { display: none; }
 }
