@@ -1,10 +1,10 @@
-/* Cooper & Friends Custom Stylesheet */
+/* Cooper & Friends Custom Stylesheet - Corrected Mint Colors */
 
-/* 1. Root Variables for Easy Color Changes */
+/* 1. Root Variables for Softer, Minty Colors */
 :root {
-    --bg-mint: #e8f5e9;       /* The pale green background */
-    --text-dark-green: #1b5e20; /* Deep forest green for main headings */
-    --accent-green: #2e7d32;    /* Medium forest green for buttons */
+    --bg-mint: #f0fff4;       /* Very Light Mint Background (Almost white) */
+    --text-dark-green: #38761d; /* Muted Forest Green for main headings/footer */
+    --accent-green: #6aa84f;    /* Softer, Mid-Tone Green for Facebook button */
     --white: #ffffff;
     --shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -92,11 +92,13 @@ nav ul li a:hover {
     box-shadow: var(--shadow);
 }
 
+/* Facebook Button - Now the softer, mid-tone green */
 .fb-btn {
     background: var(--accent-green);
     color: var(--white);
 }
 
+/* Call Button - Remains the darker, muted forest green for contrast */
 .call-btn {
     background: var(--text-dark-green);
     color: var(--white);
@@ -123,7 +125,7 @@ nav ul li a:hover {
 
 .card {
     background: var(--white);
-    border: 2px solid var(--text-dark-green);
+    border: 2px solid var(--accent-green); /* Border matches softer button green */
     padding: 30px;
     border-radius: 12px;
     width: 250px;
@@ -133,7 +135,7 @@ nav ul li a:hover {
 
 /* 7. Footer */
 footer {
-    background: var(--text-dark-green);
+    background: var(--text-dark-green); /* Darker green background */
     color: var(--white);
     text-align: center;
     padding: 50px 20px;
@@ -146,7 +148,7 @@ footer h3 {
 }
 
 .facebook-link {
-    color: var(--bg-mint);
+    color: var(--bg-mint); /* Light mint link on dark green background */
     text-decoration: underline;
     font-size: 1.1rem;
 }
