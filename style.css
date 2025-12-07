@@ -2,34 +2,34 @@
 
 /* 1. Brand Root Variables */
 :root {
-    /* Found in price list headers and testimonial bubbles */
-    --brand-mint: #91C0B1;         
-    
-    /* Found in "Cooper & Friends" main logo text */
-    --brand-dark-teal: #1E5C50;   
-    
-    /* Subtle off-white wash for clean backgrounds */
-    --brand-light-wash: #f2f8f6;  
-    
+    --brand-mint: #91C0B1;         /* Primary brand green from flyer */
+    --brand-dark-teal: #1E5C50;    /* Dark teal from logo */
+    --brand-light-wash: #f2f8f6;   /* Clean background for content */
     --white: #ffffff;
     --shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 /* 2. Global Styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: var(--brand-light-wash); /* Prevents total darkness */
-    color: var(--brand-dark-teal); /* Ensures readable text */
+    background-color: var(--brand-light-wash);
+    color: var(--brand-dark-teal);
 }
 
-/* 3. Header & Navigation */
+/* 3. Header & Navigation (Fixed the black bar) */
 header {
-    background: var(--white);
+    background: var(--brand-mint); /* Now uses brand mint instead of white/black */
     padding: 1rem 0;
     box-shadow: var(--shadow);
+}
+
+.logo, nav ul li a {
+    color: var(--white) !important; /* White text on mint background */
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav {
@@ -40,142 +40,71 @@ nav {
     margin: 0 auto;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--brand-dark-teal); /* Matches dark logo text */
-}
-
 nav ul {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
 }
 
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: var(--brand-dark-teal);
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--brand-mint);
-}
+nav ul li { margin-left: 20px; }
 
 /* 4. Hero Section */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    max-width: 100%;
-    margin: 0 auto;
-    background-color: var(--brand-mint); /* Mimics mint sidebar color */
-    color: var(--white);
+    background-color: var(--brand-light-wash);
+    color: var(--brand-dark-teal);
 }
 
-.hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    opacity: 0.9;
-}
+.hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
 
 /* 5. Buttons */
-.fb-btn, .call-btn {
-    padding: 14px 28px;
-    text-decoration: none;
-    border-radius: 8px;
-    display: inline-block;
-    margin: 10px;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: var(--shadow);
-    border: none;
-    cursor: pointer;
-}
-
-/* Facebook Button - Primary Brand Mint */
 .fb-btn {
     background: var(--brand-mint);
     color: var(--white);
+    padding: 14px 28px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    box-shadow: var(--shadow);
+    text-decoration: none;
 }
 
-/* Call Button - Dark Teal for contrast */
-.call-btn {
-    background: var(--brand-dark-teal);
-    color: var(--white);
-}
-
-.fb-btn:hover, .call-btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
-/* 6. Services Section */
+/* 6. Service Cards (Fixed the black cards) */
 #services {
     padding: 80px 20px;
     text-align: center;
+    background-color: var(--white); /* Distinct section contrast */
 }
 
 .service-grid {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 30px;
     margin-top: 40px;
 }
 
 .card {
-    background: var(--white);
-    border: 1.5px solid var(--brand-mint); /* Border based on bubble accent */
+    background: var(--brand-mint); /* Shadowed green style */
+    color: var(--white);
     padding: 40px;
     border-radius: 15px;
     width: 280px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Visible shadow effect */
 }
 
-.card:hover {
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-/* 7. Footer */
+/* 7. Footer (Fixed the black footer) */
 footer {
-    background: var(--brand-dark-teal); /* Dark forest footer */
+    background: var(--brand-dark-teal); /* High contrast teal from flyer */
     color: var(--white);
     text-align: center;
     padding: 60px 20px;
-    margin-top: 80px;
 }
 
-footer h3 {
-    margin-bottom: 15px;
-}
+.facebook-link { color: var(--brand-mint); text-decoration: underline; }
 
-.facebook-link {
-    color: var(--brand-mint);
-    text-decoration: underline;
-    font-size: 1.1rem;
-}
-
-footer p {
-    font-size: 0.9rem;
-    margin-top: 25px;
-    opacity: 0.6;
-}
-
-/* 8. Mobile Responsiveness */
+/* 8. Mobile Styling */
 @media (max-width: 600px) {
-    .hero h1 { font-size: 2rem; }
-    .fb-btn, .call-btn { width: 90%; margin: 10px auto; display: block; }
-    .card { width: 90%; }
+    .service-grid { flex-direction: column; align-items: center; }
 }
