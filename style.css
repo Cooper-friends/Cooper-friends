@@ -1,110 +1,69 @@
-/* Cooper & Friends - Brand Accurate Custom Stylesheet */
+/* Cooper & Friends - Brand Mint Correction */
 
-/* 1. Brand Root Variables */
 :root {
-    --brand-mint: #91C0B1;         /* Primary brand green from flyer */
-    --brand-dark-teal: #1E5C50;    /* Dark teal from logo */
-    --brand-light-wash: #f2f8f6;   /* Clean background for content */
+    --brand-mint: #91C0B1;         /* The true flyer green */
+    --brand-dark-teal: #1E5C50;    /* For deep contrast */
+    --brand-bg-light: #f2f8f6;     /* Clean background wash */
     --white: #ffffff;
-    --shadow: 0 4px 10px rgba(0,0,0,0.08);
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* 2. Global Styling */
+/* 1. Reset Grey Backgrounds */
 body {
-    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--brand-bg-light); /* Sets the overall page wash */
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: var(--brand-light-wash);
     color: var(--brand-dark-teal);
 }
 
-/* 3. Header & Navigation (Fixed the black bar) */
-header {
-    background: var(--brand-mint); /* Now uses brand mint instead of white/black */
-    padding: 1rem 0;
-    box-shadow: var(--shadow);
-}
-
-.logo, nav ul li a {
-    color: var(--white) !important; /* White text on mint background */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-}
-
-nav ul li { margin-left: 20px; }
-
-/* 4. Hero Section */
+/* 2. Fix Hero Section (Turning it Mint) */
 .hero {
+    background-color: var(--brand-mint) !important; /* Forces grey to Mint */
+    padding: 120px 20px;
     text-align: center;
-    padding: 100px 20px;
-    background-color: var(--brand-light-wash);
-    color: var(--brand-dark-teal);
-}
-
-.hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-
-/* 5. Buttons */
-.fb-btn {
-    background: var(--brand-mint);
     color: var(--white);
-    padding: 14px 28px;
-    border-radius: 8px;
-    display: inline-block;
-    font-weight: bold;
-    border: none;
-    box-shadow: var(--shadow);
-    text-decoration: none;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05); /* Adds the "shadowed" depth */
 }
 
-/* 6. Service Cards (Fixed the black cards) */
+/* 3. Fix Service Section Background */
 #services {
+    background-color: var(--brand-bg-light); 
     padding: 80px 20px;
     text-align: center;
-    background-color: var(--white); /* Distinct section contrast */
 }
 
-.service-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-}
-
+/* 4. Fix Dark/Grey Cards into Shadowed Mint */
 .card {
-    background: var(--brand-mint); /* Shadowed green style */
+    background-color: var(--brand-mint) !important; /* Replaces grey/black with Mint */
     color: var(--white);
-    padding: 40px;
     border-radius: 15px;
-    width: 280px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Visible shadow effect */
+    padding: 40px;
+    border: none;
+    box-shadow: var(--shadow); /* Creates the floating/shadowed effect */
+    transition: transform 0.3s;
 }
 
-/* 7. Footer (Fixed the black footer) */
-footer {
-    background: var(--brand-dark-teal); /* High contrast teal from flyer */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* 5. Header and Footer Darkness Fix */
+header {
+    background-color: var(--brand-dark-teal); /* Dark teal for the very top */
     color: var(--white);
-    text-align: center;
-    padding: 60px 20px;
 }
 
-.facebook-link { color: var(--brand-mint); text-decoration: underline; }
+footer {
+    background-color: var(--brand-dark-teal);
+    color: var(--white);
+}
 
-/* 8. Mobile Styling */
-@media (max-width: 600px) {
-    .service-grid { flex-direction: column; align-items: center; }
+/* 6. Buttons Correction */
+.fb-btn {
+    background-color: var(--white);
+    color: var(--brand-dark-teal);
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
