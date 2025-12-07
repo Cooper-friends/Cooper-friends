@@ -6,25 +6,39 @@
 }
 
 body {
-    /* Mint Green identity across all pages */
-    background-color: #C8E6C9 !important; 
+    background-color: #C8E6C9 !important; /* Mint green theme */
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #2D3436;
     line-height: 1.6;
 }
 
-/* --- 2. HEADER & BRANDING --- */
+/* --- 2. HEADER & LOGO --- */
 header {
-    background-color: #A5D6A7; 
+    background-color: #A5D6A7; /* Pale green header */
     padding: 30px 20px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
 }
 
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main-logo {
-    max-width: 220px; /* Branded logo authority */
+    max-width: 220px; /* Branded authority */
     height: auto;
+    margin-bottom: 10px;
+}
+
+/* Restores the text branding if logo is missing or to support logo text */
+.logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1B5E20; /* Brand green */
     margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 /* --- 3. NAVIGATION --- */
@@ -45,8 +59,7 @@ nav a {
     font-weight: 600;
 }
 
-/* --- 4. HOME PAGE LEAFLET GRID --- */
-/* Target the correct class from your HTML */
+/* --- 4. LEAFLET GRID (HOME PAGE) --- */
 .leaflet-container {
     max-width: 1100px;
     margin: 40px auto;
@@ -61,41 +74,30 @@ nav a {
 
 .leaflet-column {
     flex: 1;
-    background-color: white;
+    background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    height: auto !important; /* Allows box to expand downward to fit text */
-}
-
-.leaflet-dark {
-    background-color: #E8F5E9; 
-    border-left: 10px solid #A5D6A7;
+    height: auto !important; /* Ensures text fits */
 }
 
 .leaflet-pill {
-    background-color: #1B5E20; /* standardized color */
+    background-color: #1B5E20; 
     color: white;
     display: inline-block;
     padding: 5px 25px;
     border-radius: 50px;
     margin-bottom: 20px;
-    text-transform: uppercase; /* Fixes spelling visually if misspelled in HTML */
+    text-transform: uppercase;
 }
 
-/* --- 5. SHARED PRICING & POLICY BOXES --- */
-.policy-container {
-    max-width: 850px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
+/* --- 5. PRICING & POLICY --- */
 .pricing-box {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
-    height: auto !important; /* Ensures policy is never cut off */
+    height: auto !important; /* Forces expansion for full policy */
 }
 
 .pricing-box h3 {
@@ -105,23 +107,25 @@ nav a {
     color: #1B5E20;
 }
 
-.policy-content {
-    padding: 30px;
-}
-
-.priority-note {
-    font-weight: bold;
+/* --- 6. FOOTER (FIXED) --- */
+footer {
+    background-color: #A5D6A7; /* Pale green footer */
+    padding: 40px 20px;
     text-align: center;
-    color: #1B5E20; /* Safety first priority */
-    margin-top: 15px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15); /* Reverse shadow */
 }
 
-/* --- 6. SHARED SIDEBAR STYLES --- */
-.services-sidebar {
-    background-color: #A5D6A7; 
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.facebook-link {
+    display: inline-block;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #1B5E20;
 }
 
 /* --- 7. RESPONSIVE --- */
