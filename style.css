@@ -1,13 +1,14 @@
 /* --- 1. GLOBAL RESET --- */
 * {
-    /* Padding is included in width calculation to prevent off-edge content */
+    /* Ensures padding stays inside elements to prevent off-edge content on mobile */
     box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #C8E6C9 !important; /* Mint Green identity */
+    /* Mint Green theme consistent across all pages */
+    background-color: #C8E6C9 !important; 
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #2D3436;
     line-height: 1.6;
@@ -19,7 +20,7 @@ header {
     background-color: #A5D6A7; /* Pale Green Header */
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Drop shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
     position: relative;
     z-index: 10;
 }
@@ -31,7 +32,7 @@ header {
 }
 
 .main-logo {
-    max-width: 220px; /* Branding from logo.png */
+    max-width: 220px; /* Branded authority from logo.png */
     height: auto;
     margin-bottom: 10px;
 }
@@ -39,11 +40,11 @@ header {
 .logo-text {
     font-size: 2rem;
     font-weight: bold;
-    color: #1B5E20; /* Brand green text */
+    color: #1B5E20; /* Dark Green from your brand logo */
     margin-bottom: 15px;
 }
 
-/* --- 3. NAVIGATION --- */
+/* --- 3. NAVIGATION (PILL BUTTONS) --- */
 nav ul {
     list-style: none;
     display: flex;
@@ -55,7 +56,8 @@ nav a {
     text-decoration: none;
     color: #1B5E20;
     background-color: #E8F5E9;
-    border: 2px solid #81C784; /* Pill-shaped buttons */
+    /* Restores the pill-shaped button look */
+    border: 2px solid #81C784; 
     padding: 8px 20px;
     border-radius: 25px;
     font-weight: 600;
@@ -63,7 +65,12 @@ nav a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 4. HOME PAGE LEAFLET LAYOUT --- */
+nav a:hover {
+    background-color: #81C784;
+    color: white;
+}
+
+/* --- 4. HOME PAGE LEAFLET LAYOUT & BOXES --- */
 .leaflet-container {
     max-width: 1100px;
     margin: 40px auto;
@@ -78,10 +85,10 @@ nav a {
 
 .leaflet-column {
     flex: 1;
-    background-color: white; /* RESTORES THE BOX */
+    background-color: white; /* RESTORES THE WHITE BOX */
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* RESTORES THE DROP SHADOW */
     height: auto !important; 
 }
 
@@ -113,7 +120,7 @@ nav a {
     background: white;
     padding: 25px;
     border-radius: 20px;
-    position: relative; /* REQUIRED for the tail to anchor */
+    position: relative;
     margin-bottom: 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -129,20 +136,25 @@ nav a {
     border-color: transparent white transparent transparent;
 }
 
+.bubble-alt::after {
+    left: auto;
+    right: -15px;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent white;
+}
+
 .stars {
-    color: #FFD700; /* Gold brand seen in reviewers */
+    color: #FFD700; /* Gold rating stars */
     margin-bottom: 10px;
 }
 
-/* --- 6. POLICY & PRICING --- */
+/* --- 6. SHARED PRICING & POLICY BOXES (Services, About, Home) --- */
 .pricing-box {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
-    margin: 20px auto;
-    max-width: 850px;
-    height: auto !important; /* Forces expansion for full policy content */
+    height: auto !important; /* Ensures policy text is never cut off */
 }
 
 .pricing-box h3 {
@@ -152,7 +164,45 @@ nav a {
     color: #1B5E20;
 }
 
-/* --- 7. SHARED SIDEBAR STYLES --- */
+/* --- 7. IMAGE GALLERY (OUR PETS) --- */
+.gallery-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.pet-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pet-bubble {
+    width: 300px;
+    background: white;
+    border-radius: 20px; /* Rounded corners for the bubble look */
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Strong shadow for visual appeal */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.pet-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.pet-name {
+    font-weight: bold;
+    color: #1B5E20;
+    margin-top: 10px;
+}
+
+/* --- 8. SHARED SIDEBAR STYLES --- */
 .services-sidebar {
     background-color: #A5D6A7; 
     border-radius: 15px;
@@ -160,7 +210,7 @@ nav a {
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-/* --- 8. FOOTER --- */
+/* --- 9. FOOTER --- */
 footer {
     background-color: #A5D6A7;
     padding: 40px 20px;
@@ -169,11 +219,13 @@ footer {
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* --- 9. RESPONSIVE --- */
-@media (max-width: 768px) {
+/* --- 10. RESPONSIVE --- */
+@media (max-width: 850px) {
     .leaflet-grid, .reviews-container, nav ul {
         flex-direction: column;
         align-items: center;
     }
-    .review-bubble::after { display: none; }
+    .leaflet-column, .pet-bubble {
+        width: 90%; /* Better fit on small screens */
+    }
 }
